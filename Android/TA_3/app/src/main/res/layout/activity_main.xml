@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/main_toolbar"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D4D4D3"
+        android:layout_marginTop="10dp"/>
+
+    <!--    프레그먼트들이 보여질 컨테이너뷰-->
+    <!--    정해준 name으로 HostFragment역할을 할껀데, 그리고 얘가 default_host인데, 네비게이션 그래프는 nav_graph를 사용할 것이다.-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/my_nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost = "true"
+        app:navGraph = "@navigation/nav_graph"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/my_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_nav_menu"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/transFragment"
+        android:title="번역"
+        android:icon="@drawable/ic_trans"/>
+
+    <item
+        android:id="@+id/eduFragment"
+        android:title="배우기"
+        android:icon="@drawable/ic_edu"/>
+
+</menu>
