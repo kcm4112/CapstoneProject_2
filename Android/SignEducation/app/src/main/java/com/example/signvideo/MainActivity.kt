@@ -19,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 class MainActivity : AppCompatActivity() {
     companion object {
         var alllist = ArrayList<Video>() //모든 비디오들의 정보를 담고 있는 리스트
+        var randomList = ArrayList<Int>()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
