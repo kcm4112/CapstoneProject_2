@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "980350367192",
+    "firebase_url": "https://sign-b3bbb-default-rtdb.firebaseio.com",
+    "project_id": "sign-b3bbb",
+    "storage_bucket": "sign-b3bbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980350367192:android:3d2b768d20c9973be4aead",
+        "android_client_info": {
+          "package_name": "com.example.signvideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980350367192-afeses99me2ekajnlb05099l1hsve2m0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSWiCUqQWEvusNB8rpgj4fYQ9FFE9TQRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980350367192-afeses99me2ekajnlb05099l1hsve2m0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
