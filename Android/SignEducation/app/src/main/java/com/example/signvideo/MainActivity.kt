@@ -1,5 +1,6 @@
 package com.example.signvideo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        var alllist = ArrayList<Video>() //모든 비디오들의 정보를 담고 있는 리스트
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -32,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         //파이어베이스에서 데이터 불러와서 리사이클러뷰에 보여주기
         var all_video = Firebase.database.reference// 파이어베이스 DB객체를 레퍼런스함.
 
-        var alllist = ArrayList<Video>() //모든 비디오들의 정보를 담고 있는 리스트
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
         //초기화면 보여주는 부분/
@@ -110,8 +113,11 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
             }
-
         }
 
+        binding.moveGame.setOnClickListener() {
+            var intent = Intent(this, SignGame::class.java)
+            startActivity(intent)
+        }
     }
 }
