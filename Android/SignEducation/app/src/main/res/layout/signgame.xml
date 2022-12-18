@@ -146,6 +146,38 @@
             android:layout_height="15dp"
             android:background="@drawable/game_button"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+        <VideoView
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+        <android.widget.Button
+            android:id="@+id/answer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답1"/>
+        <android.widget.Button
+            android:id="@+id/answer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답1"/>
+        <android.widget.Button
+            android:id="@+id/answer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답1"/>
+    </LinearLayout>
 
 
 
