@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blue_1">
+    <ImageView
+        android:layout_marginTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loser"
+        android:maxHeight="80dp"
+        android:maxWidth="80dp"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/regi_id"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_textview"
+            android:hint="아이디"
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/regi_pw"
+            android:layout_marginTop="20dp"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:background="@drawable/login_textview"
+            android:hint="비밀번호"
+            android:textSize="20dp"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+            <android.widget.Button
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:text="가입"
+                android:fontFamily="@font/bm_jua"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
