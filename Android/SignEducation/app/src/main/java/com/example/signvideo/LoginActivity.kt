@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
     companion object {
-        var userWatch = ""
+        var userWatch : String = ""
         var whereFrom = 0 //0이면 회원가입에서 온 것 1이면 프로필에서 로그아웃 한 것
     }
     override fun onCreate(savedInstanceState: Bundle?) {
