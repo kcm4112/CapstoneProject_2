@@ -21,8 +21,13 @@ class ProfileActivity : AppCompatActivity (){
         Log.d("watchData", "Value : ${userInform}")
         //데이터 저장하고, 로그아웃 할 수 있다.
 //        fire.child("User").child("${userInform}").child("See").setValue("${userWatch}")
-
-
+        var stringArr = userWatch.split(" ")
+        var finalString : String = ""
+        for(i in 1..stringArr.size-1) {
+            finalString = finalString + " " + stringArr[i]
+        }
+        binding.videoHistory.text = finalString
+        Log.d("Value", "${finalString}")
 
         binding.goBack.setOnClickListener() {
             var intent = Intent(this, MainActivity::class.java)

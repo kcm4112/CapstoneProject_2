@@ -161,5 +161,18 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
+
+        binding.searchBtn.setOnClickListener() {
+            var afterSearch = ArrayList<Video>()
+            var value = binding.searchText.text.toString()
+            for(i in 0..alllist.size-1) {
+                if(alllist[i].name.equals(value)) {
+                    afterSearch.add(alllist[i])
+                }
+            }
+            binding.recycler.layoutManager = GridLayoutManager(this@MainActivity, 3)
+            binding.recycler.adapter = signdata_Adapter(afterSearch, binding)
+
+        }
     }
 }

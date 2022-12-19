@@ -34,7 +34,7 @@ class signdata_Adapter (val dataSet : MutableList<Video>, val mainbinding : Acti
                 if(alllist[i].name.equals(dataSet[position].name)) {
                     if(!userWatch.contains(dataSet[position].name)) {
                         userWatch = userWatch + " " + dataSet[position].name
-                        Log.d("watchData", "Value : ${userWatch}")
+                        Log.d("watchData", "Value : ${userWatch.toString()}")
                         break
                     }
 //                    videoNum = i
