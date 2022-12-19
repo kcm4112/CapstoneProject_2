@@ -8,7 +8,9 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.signvideo.LoginActivity.Companion.userWatch
 import com.example.signvideo.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -20,11 +22,17 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var alllist = ArrayList<Video>() //모든 비디오들의 정보를 담고 있는 리스트
         var randomList = ArrayList<Int>()
+        var checkList = ArrayList<Int>() //채점 결과를 담을 리스트
+        var userInform : String? = ""
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //인텐트를 통해 넘어온 id값 저장
+        userInform = intent.getStringExtra("Inform")
+        checkList = ArrayList<Int>()
+
 
         //스피너 객체 불러오기
         val spinnerBtn = findViewById<Spinner>(R.id.spin_category)
@@ -36,7 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         //파이어베이스에서 데이터 불러와서 리사이클러뷰에 보여주기
         var all_video = Firebase.database.reference// 파이어베이스 DB객체를 레퍼런스함.
-
+        userWatch = all_video.child("User").child("${userInform}").child("See").get().toString()
+        Log.d("Initial Data", "Value : ${userWatch}")
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
         //초기화면 보여주는 부분/
@@ -117,7 +126,39 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.moveGame.setOnClickListener() {
-            var intent = Intent(this, SignGame::class.java)
+            var watchArr = userWatch.split(" ")
+            var watchlist = ArrayList<Int>()
+            for(i in 0..watchArr.size -1) {
+                for(j in 0..alllist.size-1) {
+                    if(watchArr[i].equals(alllist[j].name)) {
+                        watchlist.add(j)
+                    }
+                }
+            }
+
+            if(watchArr.size < 10) {
+                Log.d("Can not start game", "Failed!")
+                Toast.makeText(this, "10개 이상의 수어 시청이 필요합니다.\n 현재 ${watchArr.size}개의 수어를 시청하였습니다.", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                //랜덤 숫자 10개 미리 뽑아놓아야 함.
+                val set = mutableSetOf<Int>()
+                while(set.size < 10) {
+                    set.add((0..watchArr.size).random())
+                }
+                Log.d("Random", "Data : ${set}")
+                var setTolist = ArrayList(set)
+                for(i in 0..setTolist.size-1) {
+                    randomList.add(setTolist[i])
+                }
+                var intent = Intent(this, SignPractice::class.java)
+                startActivity(intent)
+            }
+        }
+
+        //프로필 버튼 클릭했을 떄 나올 화면
+        binding.profile.setOnClickListener() {
+            var intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
     }

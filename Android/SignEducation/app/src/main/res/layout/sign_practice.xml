@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="게임 방법"
+            android:textSize="30dp"
+            android:fontFamily="@font/bm_jua"
+            android:textColor="@color/main_blue"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="아래 동영상에서 보여지는 수화의 뜻을 맞추는 게임입니다."
+            android:textSize="17dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/bm_jua"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+        <VideoView
+            android:id="@+id/practiceVideo"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기1"
+            android:fontFamily="@font/bm_jua"/>
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기2"
+            android:fontFamily="@font/bm_jua"/>
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보기3"
+            android:fontFamily="@font/bm_jua"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위 3개의 보기 중 하나의 답을 고르면,"
+        android:textSize="17dp"
+        android:fontFamily="@font/bm_jua"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자동으로 다음 문제로 넘어가며"
+        android:textSize="17dp"
+        android:fontFamily="@font/bm_jua"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="총 10개의 문제가 출제됩니다!"
+        android:textSize="17dp"
+        android:fontFamily="@font/bm_jua"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="준비가 되면 시작해주세요!"
+        android:textSize="17dp"
+        android:fontFamily="@font/bm_jua"
+        android:textColor="@color/main_blue"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <android.widget.Button
+        android:id="@+id/startGame"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="시작하기"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/main_blue"
+        android:fontFamily="@font/bm_jua"
+        android:layout_marginTop="15dp"/>
+</LinearLayout>
